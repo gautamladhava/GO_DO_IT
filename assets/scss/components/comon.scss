@@ -1,0 +1,580 @@
+.main-wrapper {
+    @include rem-fallback(padding-top, 118);
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.blue-text {
+    color: $blue;
+}
+
+.green-text {
+    color: $green;
+}
+
+
+.big-text {
+    @include rem-fallback(font-size, 24);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(font-size, 20);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(font-size, 18);
+    }
+
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+.text {
+    z-index: 10;
+    position: relative;
+}
+
+.main-heading {
+    color: $light-white;
+    text-align: center;
+    @include rem-fallback(margin-bottom, 25)
+}
+
+.perpal {
+    color: $perpal
+}
+
+.red {
+    color: $red
+}
+
+.sm-text {
+    @include rem-fallback(font-size, 12);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(font-size, 11);
+    }
+
+}
+
+.blue_border_fill {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        transition: all 0.7s;
+        background-color: $blue;
+    }
+
+    &:hover::after {
+        transition: all 0.7s;
+        width: 0;
+    }
+}
+
+.white_border {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        transition: all 0.7s;
+        background-color: $white;
+    }
+
+    &:hover::after {
+        transition: all 0.7s;
+        width: 0
+    }
+}
+
+.blue_border {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 0;
+        @include rem-fallback(height, 1);
+        background-color: $blue;
+        transition: all 0.7s;
+    }
+
+    &:hover::before {
+        width: 100%;
+        transition: all 0.6s;
+    }
+}
+
+.list-style {
+    position: relative;
+
+    @include bp(xlg-md) {
+        @include rem-fallback(margin-left, 30);
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        @include rem-fallback(left, -60);
+
+        @include bp(xlg-md) {
+            @include rem-fallback(left, -30);
+        }
+
+        color: $gray;
+        content: "#";
+        font-weight: 700;
+    }
+}
+
+
+ul {
+    list-style-type: none;
+
+    li {
+        a {
+
+            text-decoration: none;
+            @include rem-fallback(padding, 2, 0);
+            @include rem-fallback(font-size, 14);
+            @include rem-fallback(letter-spacing, 2);
+
+            @include bp(tablet-max) {
+                @include rem-fallback(font-size, 13);
+
+            }
+
+        }
+    }
+}
+.section-list::-webkit-scrollbar{
+    width:3px;
+    border: 1px solid #575757;
+    border-radius: 10px;
+    height: 5px;
+}
+
+.section-list::-webkit-scrollbar-thumb{
+    background-color: $blue;  
+    border-radius: 10px;
+}
+.section-list::-webkit-scrollbar-track{
+    background-color: $blue_gray;
+    border-radius: 10px
+}
+.section-list::-webkit-scrollbar-button{
+    background-color: $light-black;
+    width: 3px;
+    border-radius: 10px
+}
+.bio-data {
+    @include rem-fallback(padding, 0, 25);
+    @include rem-fallback (margin-left, 35);
+    flex: 0 0 calc(70% - 35px);
+    max-width: calc(70% - 35px);
+
+    @include bp(smd-max) {
+        @include rem-fallback (margin-left, 10);
+        flex: 0 0 calc(70% - 10px);
+        max-width: calc(70% - 10px);
+    }
+
+    @include bp(smlg-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        @include rem-fallback(padding, 0, 0);
+        @include rem-fallback (margin-left, 0);
+    }
+
+    .button-wrapper {
+        @include rem-fallback(margin-top, 20);
+
+        .primary-btn {
+            @include rem-fallback(font-size, 14);
+
+            @include bp(smlg-max) {
+                @include rem-fallback(font-size, 13);
+            }
+        }
+    }
+
+    .row {
+
+
+        &.form-group {
+            @include rem-fallback(margin-bottom, 8);
+
+            @include bp(xs-max) {
+                @include rem-fallback(margin-bottom, 15);
+            }
+        }
+
+        .two-part {
+            @include bp(xs-max) {
+                @include rem-fallback(margin-bottom, 10)
+            }
+        }
+
+        .attach-fill {
+            background-color: $white;
+            @include rem-fallback(padding, 10);
+        }
+
+        input {
+            width: 100%;
+            border: 2px solid $border_color;
+            @include rem-fallback(padding, 12);
+            border-radius: 0;
+            color: $blur_black;
+
+            @include bp(smd-max) {
+                @include rem-fallback(padding, 8);
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &::placeholder {
+                color: $blur-gray;
+            }
+
+            &:focus {
+                outline: none;
+                border: 2px solid $blue;
+
+            }
+
+            &.form-control {
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            &.choose-file {
+                width: 100%;
+                border: 2px dashed $light-white;
+                @include rem-fallback(padding, 25);
+
+                @include bp(xs-max) {
+                    @include rem-fallback(padding, 15);
+                }
+            }
+        }
+
+        label {
+            @include rem-fallback(padding-top, 15);
+
+            @include bp(xs-max) {
+                @include rem-fallback(margin-bottom, 10);
+                @include rem-fallback(padding-top, 0);
+            }
+        }
+
+        textarea {
+            overflow: auto;
+            border-color: $border_color;
+            resize: none;
+            @include rem-fallback(padding, 10);
+            @include rem-fallback(min-height, 165);
+            width: 100%;
+            border: 2px solid $border_color;
+            border-radius: 0;
+
+            @include bp(smd-max) {
+                @include rem-fallback(min-height, 70);
+            }
+
+            &:focus-visible {
+                outline: none;
+                border: 2px solid $blue;
+
+
+            }
+        }
+
+        .dk-select {
+            width: 100%;
+            border-radius: 0;
+
+            .dk-selected {
+                @include rem-fallback(padding, 12);
+                width: 100%;
+                border-radius: 0;
+                border: 2px solid $border_color;
+
+                &:focus {
+                    outline: none;
+                    border: 2px solid $blue;
+                }
+
+                &::after {
+                    border-left: 0;
+                }
+
+                &::before {
+                    background-image: url(../../public/images/drop-down_arrow.svg);
+                    @include rem-fallback(margin-right, 20);
+                    @include rem-fallback(height, 15);
+                    @include rem-fallback(width, 15);
+                    border: 0;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+
+
+            .dk-select-options {
+                border-color: $blue;
+                @include rem-fallback(padding, 0);
+                border-radius: 0;
+
+                .dk-option {
+                    @include rem-fallback(padding, 5, 8);
+
+                    .dk-option-selected {
+                        background-color: $blue;
+                        color: $white;
+                    }
+
+                    .dk-option-highlight {
+                        background-color: $blue;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cards {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    flex-wrap: wrap;
+    @include rem-fallback(padding, 0, 20);
+    @include rem-fallback(border-radius, 50);
+
+    @include bp(xlg-max) {
+        @include rem-fallback(padding, 0, 10);
+    }
+
+    @include bp(smlg-max) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        @include rem-fallback(margin-bottom, 25)
+    }
+
+    @include bp(xs-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .img-content-card {
+        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+        background-color: $white;
+        height: 100%;
+        border-radius: 16px 16px 16px 0px;
+        overflow: hidden;
+
+        .image {
+            position: relative;
+
+            h3 {
+                position: absolute;
+                @include rem-fallback(bottom, 0);
+                @include rem-fallback(left, 30);
+                color: $white;
+
+                @include bp(xlg-max) {
+                    @include rem-fallback(left, 10);
+                }
+            }
+
+            img {
+                height: 100%;
+                width: 100%
+            }
+        }
+
+        .content {
+            @include rem-fallback(padding, 20, 30);
+
+            @include bp(xlg-max) {
+                @include rem-fallback(padding, 10, 15);
+            }
+
+        }
+    }
+}
+
+.btn {
+    @include rem-fallback(border-radius, 99);
+    @include rem-fallback(font-size, 16);
+    @include rem-fallback(padding, 18, 50);
+    transition: all 0.7s;
+
+    &:hover {
+        text-shadow: none;
+        transition: all 0.7s;
+    }
+
+    @include bp(xlg-max) {
+        @include rem-fallback(padding, 13, 25);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(font-size, 13);
+    }
+
+    i {
+        @include rem-fallback(margin-right, 5);
+    }
+
+
+
+    &.primary-btn {
+        background-color: $blue;
+        position: relative;
+        color: $black;
+        overflow: hidden;
+        transition: all 0.7s;
+
+
+        &:hover {
+
+            background-color: $light-gray;
+            border: 1px solid $blue;
+            transition: all 0.7s;
+            box-shadow: none;
+            text-shadow: none;
+        }
+    }
+
+    &.border-btn {
+        color: $blue;
+        border: 1px solid $blue;
+        position: relative;
+        font-weight: 600;
+        transition: all 0.7s;
+
+        &:hover {
+            background-color: $blue;
+            color: $white;
+            transition: all 0.7s;
+            box-shadow: none;
+            text-shadow: none;
+        }
+    }
+}
+
+.book-content {
+    display: flex;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 16px 16px 16px 0px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .book-part {
+        @include rem-fallback(padding, 30, 30, 0, 30);
+        background-color: $perpal;
+        flex: 0 0 23%;
+        max-width: 23%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        @include bp(smlg-max) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        @include bp(smd-max) {
+            @include rem-fallback(padding, 15, 15, 0, 15);
+        }
+
+        .book-img {
+            height: 100%;
+            width: 100%;
+            @include rem-fallback(max-width, 300);
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .content-part {
+        flex: 0 0 77%;
+        max-width: 77%;
+        background-color: $white;
+        @include rem-fallback(padding, 30, 50, 30, 30);
+
+        @include bp(smlg-max) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        @include bp(smd-max) {
+            @include rem-fallback(padding, 15, 20, 15, 15);
+
+        }
+
+        ul {
+            display: flex;
+
+            @include rem-fallback(margin, 0, -15);
+            @include rem-fallback(margin-bottom, 10);
+
+            @include bp(smd-max) {
+                @include rem-fallback(margin-bottom, 0);
+            }
+
+            @include bp(xxxs-min) {
+                flex-direction: column;
+            }
+
+            li {
+                @include rem-fallback(padding, 15);
+                font-weight: 700;
+                letter-spacing: 2px;
+
+
+                @include bp(smd-max) {
+                    @include rem-fallback(padding, 5, 15);
+                }
+
+                a {
+                    color: $blur_black;
+
+                }
+            }
+        }
+
+        span {
+            a {
+                text-decoration: none;
+
+                display: inline-block
+            }
+        }
+    }
+}

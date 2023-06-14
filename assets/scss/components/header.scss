@@ -1,0 +1,175 @@
+.header {
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 21;
+    @include rem-fallback(padding, 26, 0);
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 15, 0);
+    }
+
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .overly {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            background-color: $opacity_black;
+            display: none;
+            transition: all 0.7s;
+        }
+
+        .logo {
+            img {
+                @include bp(tablet-max) {
+                    @include rem-fallback(max-width, 250);
+                }
+
+                @include bp(smlg-max) {
+                    @include rem-fallback(max-width, 200)
+                }
+            }
+        }
+
+        .nav-menu {
+            @include bp(xs-max) {
+                position: fixed;
+                height: 100vh;
+                background-color: $blue;
+                z-index: 20;
+                top: 0;
+            
+                transition: all 0.7s;
+                @include rem-fallback(width, 300);
+                @include rem-fallback(right, -300);
+            }
+
+            .close-menu {
+                position: absolute;
+                @include rem-fallback(top, 30);
+                @include rem-fallback(right, 30);
+                display: none;
+                cursor: pointer;
+
+                @include bp(xs-max) {
+                    display: block;
+                }
+
+                .bar {
+                    @include rem-fallback(margin-bottom, 0);
+                    @include rem-fallback(height, 2);
+                    @include rem-fallback(width, 30);
+
+                    background-color: $white;
+                }
+
+                .bar1 {
+                    transform: rotate(45deg) translate(3px);
+                }
+
+                .bar2 {
+                    opacity: 0;
+                }
+
+                .bar3 {
+                    transform: rotate(-45deg) translate((3px));
+                }
+
+            }
+
+            ul {
+                list-style-type: none;
+                display: flex;
+                @include rem-fallback(margin, 0, -25);
+
+                @include bp(smlg-max) {
+                    @include rem-fallback(margin, 0, -10);
+                }
+
+                @include bp(xs-max) {
+                    flex-direction: column;
+                    @include rem-fallback(margin, 0, 0);
+                    @include rem-fallback(padding, 200, 50)
+                }
+
+                li {
+                    @include rem-fallback(padding, 0, 25);
+
+                    @include bp(smlg-max) {
+                        @include rem-fallback(padding, 0, 10);
+                    }
+
+                    @include bp(xs-max) {
+                        @include rem-fallback(padding, 10, 0);
+                        text-align: center;
+                    }
+
+                    a {
+                        position: relative;
+                        color: $blur_black;
+                        word-spacing: 4.3px;
+
+                        @include bp(smlg-max) {
+                            word-spacing: 2px;
+                            
+                        }
+                        @include bp(xs-max){
+                            color: $white;
+                        }
+
+                       
+                    }
+                }
+            }
+        }
+
+        .open-menu {
+            @include rem-fallback(margin-bottom, -4);
+            display: none;
+            cursor: pointer;
+
+            @include bp(xs-max) {
+                display: block;
+            }
+
+            .bar {
+
+                @include rem-fallback(height, 2);
+                @include rem-fallback(width, 30);
+                @include rem-fallback(margin-bottom, 4);
+                background-color: $black;
+
+            }
+
+            &.change {
+                .bar {
+                    @include rem-fallback(margin-bottom, 0);
+                }
+
+                .bar1 {
+                    transform: rotate(45deg) translate(3px);
+                }
+
+                .bar2 {
+                    opacity: 0;
+                }
+
+                .bar3 {
+                    transform: rotate(-45deg) translate((3px));
+                }
+            }
+        }
+    }
+}

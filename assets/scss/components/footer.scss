@@ -1,0 +1,159 @@
+.footer {
+    @include rem-fallback(padding, 60, 0, 30, 0);
+    background-color: $black;
+
+    @include bp(smd-max) {
+        @include rem-fallback(padding, 30, 0, 15, 0);
+    }
+
+
+
+    .top-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        @include rem-fallback(padding-bottom, 70);
+
+        @include bp(smd-max) {
+            @include rem-fallback(padding-bottom, 30);
+        }
+        @include bp(smlg-max){
+            @include rem-fallback(padding-top, 35);
+        }
+
+        .scroll-btn-wrapper {
+            position: absolute;
+            @include rem-fallback(top, 0);
+            @include rem-fallback(right, 00);
+            @include bp(xlg-md) {
+                @include rem-fallback(right, 10);
+                @include rem-fallback(right, 25);
+            }
+
+            .btn {
+                color: $white;
+                @include rem-fallback(font-size, 12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 0;
+
+                &:active {
+                    color: $white;
+                    border: 0
+                }
+
+                img {
+                    @include rem-fallback(margin-right, 5);
+                }
+            }
+        }
+
+        .footer-logo {
+            @include rem-fallback(margin-bottom, 70);
+
+            @include bp(smd-max) {
+                @include rem-fallback(margin-bottom, 30);
+            }            
+    
+            img {
+                @include bp(tablet-max) {
+                    @include rem-fallback(max-width, 250);
+                }
+
+                @include bp(smlg-max) {
+                    @include rem-fallback(max-width, 200)
+                }
+            
+        }
+        }
+
+        p {
+            color: $blur_white;
+            text-align: center;
+        }
+
+        .partener-list {
+            ul {
+                display: flex;
+                list-style-type: none;
+                @include rem-fallback(margin, 0, -20);
+                @include rem-fallback(margin-bottom, -20);
+                flex-wrap: wrap;
+                justify-content: center;
+
+                li {
+                    @include rem-fallback(padding, 0, 20);
+                    @include rem-fallback(margin-bottom, 20);
+
+                    a {
+                        opacity: 1;
+                        transition: all 0.7s;
+
+                        &:hover {
+                            opacity: 0.6;
+                            transition: all 0.7s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-footer {
+        color: $light-white;
+        display: flex;
+        justify-content: space-between;
+        @include rem-fallback(padding-top, 50);
+        border-top: 1px solid $light-black;
+
+        @include bp(smd-max) {
+            @include rem-fallback(padding-top, 25);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            @include rem-fallback(margin-bottom, 0);
+
+            @include bp(smd-max) {
+                @include rem-fallback(margin-bottom, 10);
+            }
+        }
+
+        ul {
+            list-style-type: none;
+
+            @include bp(smd-max) {
+                order: 1;
+            }
+
+            &.menu {
+                display: flex;
+
+                @include bp(xs-max) {
+                    flex-direction: column;
+                    text-align: center
+                }
+
+                li {
+                    @include rem-fallback(padding, 0, 15);
+
+                    @include bp(xs-max) {
+
+                        text-align: center;
+                        @include rem-fallback(margin-bottom, 10);
+                    }
+
+                    a {
+                        color: $light-white;
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
+@font-face {
+	font-family: 'Calibri-regular';
+	src: url('../fonts/Calibri.eot') format('embedded-opentype'), 
+	url('../fonts/Calibri.woff')  format('woff'), 
+	url('../fonts/Calibri.ttf')  format('truetype'), 
+	url('../fonts/Calibri.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Calibri-Bold';
+	src: url('../fonts/Calibri-Bold.eot') format('embedded-opentype'), 
+	url('../fonts/Calibri-Bold.woff')  format('woff'), 
+	url('../fonts/Calibri-Bold.ttf')  format('truetype'), 
+	url('../fonts/Calibri-Bold.svg#ArialMT') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Calibri-Light';
+	src: url('../fonts/Calibri-Light.eot') format('embedded-opentype'), 
+	url('../fonts/Calibri-Light.woff')  format('woff'), 
+	url('../fonts/Calibri-Light.ttf')  format('truetype'), 
+	url('../fonts/Calibri-Light.svg#ArialMT') format('svg');
+	font-weight: normal;
+	font-style: normal;
+} 
+
+
+$Calibri-Regular:'Calibri-regular';
+$Calibri-Bold:'Calibri-Bold';
+$Calibri-Light:'Calibri-Light';

@@ -1,0 +1,1210 @@
+.banner-section {
+    background-image: url(../../public/images/banner_bg_img.png);
+    background-size: cover;
+    background-position: bottom;
+    @include rem-fallback(padding, 50, 0);
+    @include rem-fallback(min-height, 720);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+        @include rem-fallback(min-height, 620);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+        min-height: auto;
+    }
+
+    .mouse-scroll-icon {
+        display: flex;   
+        align-items: center;
+        justify-content: center;
+       
+        @include rem-fallback(margin-bottom, 110);
+
+        @include bp(tablet-max) {
+            @include rem-fallback(margin-bottom, 60);
+        }
+
+        @include bp(smlg-max) {
+            @include rem-fallback(margin-bottom, 30);
+        }
+
+  
+        img{
+            cursor: pointer;
+            &:hover {
+                animation: animate 0.7s  alternate infinite ;
+                
+            }
+    
+    
+            @keyframes animate {
+                0% {
+                    transform: translateY(0) ;
+                   
+                }
+    
+                100% {
+                    transform: translateY(10px);
+                }
+    
+            }
+        }
+    }
+
+    .menu-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ul.section-list {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: nowrap;
+            overflow: auto;
+            white-space: nowrap;
+            transition: all 0.7s;
+            @include rem-fallback(min-height,30);
+            @include rem-fallback(padding-bottom, 4);
+
+            &.sticky {
+                position: fixed;
+                background-color: $black;
+                justify-content: center;
+                @include rem-fallback(padding, 20, 0);
+                top: 200px;
+                width: 100%;
+                left: 0;
+                right: 0;
+                z-index: 20;
+                transition: all 0.7s;
+                @include bp(smlg-max) {
+                    justify-content: flex-start;
+                }
+            }
+
+            li {
+                @include rem-fallback(padding, 0, 25);
+                @include rem-fallback(padding, 0, 10);
+
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.solution-section {
+    @include rem-fallback(padding, 95, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .issue-list {
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            @include rem-fallback(padding, 50, 0);
+            @include rem-fallback(margin-bottom, -30);
+
+            li {
+                position: relative;
+                flex: 0 0 25%;
+                max-width: 25%;
+                @include rem-fallback(padding, 0, 20);
+                @include rem-fallback(margin-bottom, 30);
+
+                @include bp(tablet-max) {
+                    flex: 0 0 33.33%;
+                    max-width: 33.33%;
+                }
+
+                @include bp(xs-max) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    @include rem-fallback(margin-bottom, 30);
+                }
+
+                @include bp(xxxs-min) {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    @include rem-fallback(margin-bottom, 15);
+                }
+
+                .bold-text {
+                    position: relative;
+
+                    &:after {
+                        position: absolute;
+                        @include rem-fallback(top, 4);
+                        @include rem-fallback(left, -20);
+                        content: "";
+                        background-image: url(../../public/images/list-arrow.svg);
+                        background-repeat: no-repeat;
+                        @include rem-fallback(height, 12);
+                        @include rem-fallback(width, 12);
+                        background-size: contain;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    .solution-list {
+        display: flex;
+        flex-wrap: wrap;
+        @include rem-fallback(margin, 0, -20);
+        border: 0;
+        @include rem-fallback(margin-bottom, 65);
+
+        @include bp(xlg-max) {
+            @include rem-fallback(margin, 0, -10);
+            @include rem-fallback(margin-bottom, 35);
+        }
+    }
+
+    .button-wrapper {
+
+        @include rem-fallback(margin-bottom, 60);
+
+        .primary-btn {
+            width: 100%;
+            @include rem-fallback(font-size, 18);
+
+            @include bp(smlg-max) {
+                @include rem-fallback(font-size, 14);
+            }
+        }
+    }
+
+    .img-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            color: $gray-black;
+            font-style: italic;
+            @include rem-fallback(margin-bottom, 68);
+
+            @include bp(smlg-max) {
+                @include rem-fallback(margin-bottom, 35);
+            }
+        }
+
+        .app-img {
+            @include rem-fallback(margin-bottom, 20);
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .partener-logo {
+            img {
+                @include bp(smlg-max) {
+                    @include rem-fallback(width, 150)
+                }
+            }
+        }
+    }
+}
+
+.choose-us-section {
+
+    @include rem-fallback(margin-bottom, 30);
+
+    .choose-us-block {
+        display: flex;
+        color: $white;
+        flex-wrap: wrap;
+        background-color: $black;
+        @include rem-fallback(margin, 0, -12);
+
+        .choose-us-content {
+            flex: 0 0 60%;
+            max-width: 60%;
+
+
+            @include bp(smd-max) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                @include rem-fallback(margin-bottom, 20);
+            }
+
+            .choose-us-content-box {
+                @include rem-fallback(max-width, 798);
+
+                margin-left: auto;
+                @include rem-fallback(padding, 110, 50, 110, 0);
+
+                @include bp(xlg-md) {
+                    @include rem-fallback(padding, 110, 50, 110, 25);
+                }
+
+                @include bp(smd-max) {
+                    max-width: 100%;
+                    @include rem-fallback(padding, 50, 30, 50, 25);
+                }
+
+                .right-pera {
+                    @include rem-fallback(max-width, 725);
+
+                    display: flex;
+                    flex-direction: column;
+                    @include rem-fallback(margin, 40, 0);
+                    margin-left: auto;
+
+                    p {
+                        @include rem-fallback(font-size, 21);
+
+                        @include bp(smlg-max) {
+                            @include rem-fallback(font-size, 18);
+                        }
+
+                        &:last-child {
+
+                            @include rem-fallback(font-size, 16);
+
+                            @include bp(smlg-max) {
+                                @include rem-fallback(font-size, 14);
+                            }
+                        }
+                    }
+
+                }
+
+                .primary-btn {
+                    @include rem-fallback(font-size, 14);
+                    @include rem-fallback(margin-top, 20);
+
+                    @include bp(smlg-max) {
+                        @include rem-fallback(font-size, 13);
+                    }
+                }
+            }
+        }
+
+        .choose-us-content-slide {
+            flex: 0 0 40%;
+            max-width: 40%;
+
+            @include bp(smd-max) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                @include rem-fallback(padding, 50, 0);
+            }
+
+            background-image: url(../../public/images/sidebar.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            .choose-us-content-box-slide {
+
+                display: flex;
+
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                text-align: center;
+
+                .slider {
+                    @include rem-fallback(max-width, 350);
+                    margin: auto;
+
+                    @include bp(xxxs-min) {
+                        @include rem-fallback(max-width, 300);
+                    }
+
+                    .slide-content {
+                        @include rem-fallback(margin-bottom, 40);
+
+                        @include bp(smlg-max) {
+                            @include rem-fallback(margin-bottom, 25);
+                        }
+
+                        img {
+                            @include rem-fallback(height, 35);
+                            @include rem-fallback(width, 40);
+
+                            @include bp(smlg-max) {
+                                @include rem-fallback(height, 25);
+                                @include rem-fallback(width, 30);
+                            }
+                        }
+
+                        p {
+                            @include rem-fallback(margin, 60, 0);
+                            @include rem-fallback(font-size, 24);
+
+                            @include bp(smd-max) {
+                                @include rem-fallback(margin, 30, 0);
+                            }
+
+                            @include bp(smlg-max) {
+                                @include rem-fallback(font-size, 18);
+                                @include rem-fallback(margin, 40, 0);
+                            }
+
+                        }
+                    }
+
+                    .slick-dots {
+                        @include rem-fallback(bottom, -110);
+
+                        @include bp(smd-max) {
+                            @include rem-fallback(bottom, -30);
+                        }
+
+                        li {
+                            @include rem-fallback(height, 15);
+                            @include rem-fallback(width, 15);
+                            @include rem-fallback(padding, 1);
+                            border-radius: 50%;
+                            border: 1px solid $white;
+
+                            @include bp(smlg-max) {
+                                @include rem-fallback(height, 10);
+                                @include rem-fallback(width, 10);
+                                @include rem-fallback(padding, 0);
+                            }
+
+                            button {
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 50%;
+                                @include rem-fallback(padding, 0);
+
+                                &::before {
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                            }
+
+                            &.slick-active {
+                                button {
+                                    background-color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.benefit-section {
+    @include rem-fallback(padding, 50, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .benefit-list-block {
+        @include rem-fallback(margin, 40, 0);
+
+        .benefit-list-slider {
+            @include rem-fallback(margin-bottom, 115);
+
+            @include bp(smd-max) {
+                @include rem-fallback(margin-bottom, 25);
+            }
+
+            .benefit-list {
+                &.slick-slider {
+                    .slick-list {
+                        max-width: 85%;
+                        margin: auto
+                    }
+
+                    .slick-arrow {
+                        color: transparent;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        @include rem-fallback(height, 30);
+                        @include rem-fallback(width, 30);
+
+                        @include bp(smlg-max) {
+                            @include rem-fallback(height, 20);
+                            @include rem-fallback(width, 20);
+                        }
+
+                        &.slick-prev {
+                            background-image: url(../../public/images/left-slide-arrow.svg);
+                            left: 0;
+                        }
+
+                        &.slick-next {
+                            background-image: url(../../public/images/right-slide-arrow.svg);
+                            right: 0;
+                        }
+
+                        &::before {
+                            color: transparent
+                        }
+                    }
+
+                }
+
+                .benifit {
+                    img {
+                        @include rem-fallback(margin-bottom, 15);
+
+                        @include bp(smlg-max) {
+                            @include rem-fallback(height, 30);
+                            @include rem-fallback(width, 30);
+                            object-fit: contain;
+                            @include rem-fallback(margin-bottom, 8);
+                        }
+                    }
+
+
+                    &.slick-slide {
+                        @include rem-fallback(padding, 0, 10)
+                    }
+
+                    ul {
+                        @include rem-fallback(margin-left, 25);
+
+                        li {
+                            @include rem-fallback(margin-bottom, 13);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
+
+.help-section {
+    @include rem-fallback(padding, 60, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .help-list {
+        display: flex;
+        flex-wrap: wrap;
+        @include rem-fallback(margin, 0, -20);
+
+        @include bp(xlg-max) {
+            @include rem-fallback(margin, 0, -10);
+        }
+
+        .border-btn {
+            width: 100%;
+        }
+
+        .cards {
+            .img-content-card {
+                border-radius: 0;
+                box-shadow: none;
+                background-color: transparent;
+                overflow: visible;
+
+                .content {
+                    background-color: transparent;
+                    @include rem-fallback(padding, 30, 0, 0, 0);
+                    // @include rem-fallback(max-height, 300);
+                    overflow: hidden;
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        @include rem-fallback(top, 130);
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        background: url(../../public/images/fade-bg.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        // background: linear-gradient(180deg, rgba(246, 246, 243, 0) -6.29%, rgba(246, 246, 243, 0.82) 47.41%, #F6F6F3 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.case-studie-section {
+    @include rem-fallback(padding, 60, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .case-studies-list {
+        @include rem-fallback(margin, -25, 0);
+
+        .case-studies {
+            display: flex;
+            flex-wrap: wrap;
+            @include rem-fallback(margin, 0, -15);
+            @include rem-fallback(padding, 25, 0);
+            justify-content: center;
+
+            @include bp(smlg-max) {
+                @include rem-fallback(margin-bottom, -20);
+            }
+
+            &.right-img-part {
+                .content-part {
+                    order: -1;
+                }
+            }
+
+            .img-part {
+                @include rem-fallback(padding, 0, 15);
+                flex: 0 0 41%;
+                max-width: 41%;
+
+                @include bp(smlg-max) {
+                    flex: 0 0 100%;
+                    @include rem-fallback(max-width, 300);
+                    @include rem-fallback(margin-bottom, 20);
+                }
+
+                .content {
+                    min-height: 300px;
+                    width: 100%;
+
+                    background-color: $bg_gray;
+                }
+            }
+
+            .content-part {
+                @include rem-fallback(padding, 0, 15);
+                flex: 0 0 59%;
+                max-width: 59%;
+
+                @include bp(smlg-max) {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    @include rem-fallback(margin-bottom, 20);
+                }
+
+                ul {
+                    @include rem-fallback(margin-bottom, 15);
+
+                    list-style-type: none;
+
+                    li {
+                        @include rem-fallback(padding, 5, 0);
+                        position: relative;
+                        @include rem-fallback(margin-left, 25);
+
+                        &::after {
+                            position: absolute;
+
+                            @include rem-fallback(height, 4);
+                            @include rem-fallback(width, 4);
+                            border-radius: 50%;
+                            background-color: $blur_black;
+                            content: "";
+
+                            @include rem-fallback(top, 10);
+                            @include rem-fallback(left, -15);
+                        }
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+.enquire-section {
+    @include rem-fallback(padding, 60, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .enquire-part {
+        display: flex;
+        flex-wrap: wrap;
+        @include rem-fallback(margin, 0, -25);
+
+        @include bp(smlg-max) {
+            @include rem-fallback(margin, 0, 0);
+        }
+
+        .contact-detail {
+            flex: 0 0 30%;
+            max-width: 30%;
+            height: 100%;
+            @include rem-fallback(padding, 0, 25);
+
+            @include bp(smlg-max) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                @include rem-fallback(margin-bottom, 20);
+                @include rem-fallback(padding, 0, 0);
+            }
+
+            ul {
+                list-style-type: none;
+                @include rem-fallback(margin, 15, 0);
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    color: $blur_black;
+                    @include rem-fallback(padding, 10, 0);
+
+                    .img-part {
+                        @include rem-fallback(margin, 0, 20);
+
+                        @include bp(smd-max) {
+                            @include rem-fallback(margin, 0, 10, 0, 0);
+                        }
+
+                        img {
+                            object-fit: contain;
+                            @include rem-fallback(height, 20);
+                            @include rem-fallback(width, 20);
+                        }
+                    }
+
+                    .content-part {
+                        ul {
+                            list-style-type: none;
+                            @include rem-fallback(margin, -3, 0);
+
+                            li {
+                                @include rem-fallback(padding, 0, 0);
+
+                                a {
+                                    color: $blur_black;
+                                    @include rem-fallback(font-size, 16);
+                                    @include rem-fallback(padding, 0, 0);
+
+                                    @include bp(smlg-max) {
+                                        @include rem-fallback(font-size, 14);
+
+                                        @include bp(smlg-max) {
+                                            @include rem-fallback(font-size, 13);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.book-detail-section {
+    background-image: url(../../public/images/book-section-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include rem-fallback(padding-top, 77);
+
+    @include bp(smd-max) {
+        @include rem-fallback(padding-top, 50);
+    }
+
+    .sm-text {
+        @include rem-fallback(margin-bottom, 75);
+
+        @include bp(smd-max) {
+            @include rem-fallback(margin-bottom, 50);
+        }
+
+        a {
+            text-decoration: none;
+            color: $blur_gray;
+            font-weight: 700;
+
+            img {
+                @include rem-fallback(margin-right, 5);
+            }
+        }
+    }
+
+    .book-content {
+        justify-content: flex-start;
+        box-shadow: none;
+
+        .book-part {
+            flex-direction: column;
+            flex: 0 0 39%;
+            max-width: 39%;
+            color: $white;
+
+
+            @include rem-fallback(padding-top, 40);
+
+
+            @include bp(smd-max) {
+                @include rem-fallback(padding-top, 25);
+                @include rem-fallback(margin-bottom, 20);
+                flex: 0 0 100%;
+                max-width: 100%;
+
+            }
+
+            .buyers-guide {
+                @include rem-fallback(margin-bottom, 100);
+
+                .big-text {
+                    @include bp(xxxs-min) {
+                        @include rem-fallback(font-size, 15)
+                    }
+                }
+
+                @include bp(xlg-max) {
+                    @include rem-fallback(margin-bottom, 60);
+                }
+
+                @include bp(smd-max) {
+                    @include rem-fallback(margin-bottom, 40);
+                }
+
+                img {
+                    @include bp(smd-max) {
+                        @include rem-fallback(height, 35);
+                        @include rem-fallback(width, 35);
+                    }
+
+                    @include rem-fallback(margin-right, 10);
+                }
+            }
+
+            .book-img {
+                max-width: 100%;
+                @include rem-fallback(max-width, 300);
+                margin: auto;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+
+                }
+            }
+        }
+
+        .content-part {
+            flex: 0 0 61%;
+            max-width: 61%;
+            background-color: transparent;
+            @include rem-fallback(padding, 0, 30, 30, 30);
+
+            @include bp(smd-max) {
+                @include rem-fallback(padding, 0, 0, 30, 0);
+            }
+
+            @include bp(smd-max) {
+
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            h1 {
+                text-align: start;
+                line-height: 1.25;
+                @include rem-fallback(margin-bottom, 30)
+            }
+
+            h6 {
+                color: $white;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+
+            .button-wrapper {
+                .primary-btn {
+                    @include rem-fallback(font-size, 14);
+                }
+            }
+
+        }
+    }
+}
+
+.user-info-section {
+    @include rem-fallback (padding, 135, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .bio-data {
+        max-width: 100%;
+        @include rem-fallback(margin-left, 0);
+        @include rem-fallback(padding, 0);
+
+        .row {
+            input {
+                @include rem-fallback(max-width, 500);
+
+            }
+        }
+    }
+
+    .button-wrapper {
+        @include rem-fallback(margin-top, 15);
+
+        .primary-btn {
+            @include rem-fallback(font-size, 14);
+
+            @include bp(smlg-max) {
+                @include rem-fallback(font-size, 13);
+            }
+        }
+    }
+}
+
+.book-content-section {
+    display: none;
+    transition: all 0.7s;
+
+    .book-contents {
+        @include rem-fallback(max-width, 750);
+        @include rem-fallback(padding, 30);
+        background-color: #ffffff;
+        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+        @include rem-fallback(border-radius, 16, 16, 16, 0);
+
+        .green-text {
+            @include rem-fallback(margin-bottom, 20);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        border-bottom: 1px solid $blue;
+        color: $blue;
+        line-height: 1.3;
+        display: inline-flex;
+        word-spacing: 1.5px
+    }
+}
+
+.sub-banner-section {
+    background-image: url(../../public/images/sub-banner-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    @include rem-fallback(padding, 50, 0);
+    @include rem-fallback(min-height, 260);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+        @include rem-fallback(min-height, 200);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+        @include rem-fallback(min-height, 150);
+    }
+
+    @include bp(xs-max) {
+        @include rem-fallback(min-height, 100);
+    }
+
+    h1 {
+        @include rem-fallback(margin-bottom, 0)
+    }
+}
+
+.careers-content-section {
+    @include rem-fallback(padding, 105, 0, 50, 0);
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 60, 0, 25, 0);
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        @include rem-fallback(margin, 50, 0, 0, 0);
+        @include rem-fallback(margin-bottom, -20);
+
+        li {
+            @include rem-fallback(padding, 0, 20);
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+            position: relative;
+            @include rem-fallback(margin-bottom, 20);
+
+            @include bp(smlg-max) {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            @include bp(xs-max) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .bold-text {
+                &:after {
+                    position: absolute;
+                    content: "";
+                    background-image: url(../../public/images/li_left_arrow.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    @include rem-fallback(height, 13);
+                    @include rem-fallback(width, 13);
+                    @include rem-fallback(top, 4);
+                    left: 0;
+                }
+            }
+
+        }
+    }
+}
+
+.vacancies-section {
+    @include rem-fallback(padding, 185, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    &.career {
+        @include rem-fallback(padding, 50, 0, 150, 0);
+
+        @include bp(smlg-max) {
+            @include rem-fallback(padding, 25, 0, 50, 0);
+        }
+    }
+
+
+    ul.vacancies-list {
+
+
+        li {
+            display: flex;
+            width: 100%;
+
+            align-items: center;
+            background-color: $white;
+            @include rem-fallback(padding, 20, 25);
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 16px 16px 16px 0px;
+            @include rem-fallback(margin-bottom, 20);
+            position: relative;
+
+            @include bp(smlg-max) {
+                @include rem-fallback(padding, 10, 15);
+            }
+
+            @include bp(xxxs-min) {
+                @include rem-fallback(padding, 5, 10);
+                @include rem-fallback(margin-bottom, 15);
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                background-image: url(../../public/images/li_right-arrow.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                @include rem-fallback(height, 20);
+                @include rem-fallback(width, 20);
+                @include rem-fallback(right, 30);
+
+                @include bp(xs-max) {
+
+                    @include rem-fallback(right, 5);
+                }
+
+                @include bp(xxxs-min) {
+                    right: 0;
+                }
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    object-fit: contain;
+                    @include rem-fallback(margin-right, 40);
+
+                    @include bp(xs-max) {
+                        @include rem-fallback(margin-right, 10);
+                        @include rem-fallback(height, 30);
+                        @include rem-fallback(width, 30);
+                    }
+
+                    @include bp(xxxs-min) {
+                        @include rem-fallback(margin-right, 5);
+                    }
+
+                }
+
+                h4 {
+                    @include rem-fallback(margin-bottom, 0);
+
+                    @include bp(xxxs-min) {
+                        @include rem-fallback(font-size, 21)
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.person-detail-section {
+    @include rem-fallback(padding, 60, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .person-info {
+        margin: auto;
+        @include rem-fallback(max-width, 850);
+
+
+        .sm-text {
+            @include rem-fallback(margin-bottom, 55);
+
+            @include bp(xs-max) {
+                @include rem-fallback(margin-bottom, 35);
+            }
+
+            a {
+                color: $blue_gray;
+                text-decoration: none;
+            }
+        }
+
+        .person-bio {
+            @include rem-fallback(margin-bottom, 55);
+
+            @include bp(xs-max) {
+                @include rem-fallback (margin-bottom, 35);
+            }
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    @include rem-fallback(margin-left, 25);
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        background-color: $blur_black;
+                        border-radius: 50%;
+                        top: 7px;
+                        @include rem-fallback(height, 4);
+                        @include rem-fallback(width, 4);
+                        @include rem-fallback(left, -15);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.apply-section {
+    color: $white;
+    background-color: $black;
+    @include rem-fallback(padding, 70, 0);
+
+    @include bp(tablet-max) {
+        @include rem-fallback(padding, 35, 0);
+    }
+
+    @include bp(smlg-max) {
+        @include rem-fallback(padding, 25, 0);
+    }
+
+    .big-text {
+        @include rem-fallback(margin-bottom, 40);
+
+        @include bp(smlg-max) {
+            @include rem-fallback(margin-bottom, 25);
+        }
+    }
+
+    .person-detail-info {
+        @include rem-fallback(max-width, 850);
+        margin: auto;
+
+        .bio-data {
+            flex: 0 0 100%;
+            max-width: 100%;
+            @include rem-fallback(margin-left, 0);
+            @include rem-fallback(padding, 0);
+
+            >.row {
+                @include rem-fallback(margin-bottom, 17);
+
+            }
+        }
+
+    }
+}
